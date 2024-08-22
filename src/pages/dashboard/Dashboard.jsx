@@ -1,4 +1,5 @@
-import { Counter } from "../../components/counter/counter"
+import { Counter } from "../../components/counter/Counter";
+import './dashboard.css';
 
 export const Dashboard = () => {
     return (

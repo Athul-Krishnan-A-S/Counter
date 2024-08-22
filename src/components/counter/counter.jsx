@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from '../button/Button';
+import './counter.css';
 
 export const Counter = () => {
 
@@ -15,14 +16,18 @@ export const Counter = () => {
     const handleNumberChange = (event) => {
         setRange(event.target.value);
     }
+    const setToZero = () => {
+        setCount(0);
+    }
 
     return (
-        <div>
+        <div className='counter-container'>
             <p>{count}</p>
             <div className='buttons-container'>
                 <Button value='Add' onclick={() => addCount} />
                 <Button value='Decrease' onclick={() => decreaseCount} />
-                <input type='number' placeholder='action value' onChange={handleNumberChange}></input>
+                <Button value='Set To Zero' onclick={() => setToZero} />
+                <input type='number' placeholder='range' onChange={handleNumberChange}></input>
             </div>
         </div>
     )
